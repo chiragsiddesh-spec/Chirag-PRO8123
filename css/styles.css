@@ -1,0 +1,3134 @@
+/* ==========================================================================
+   CHIRAG SIDDESH // COMPUTER SCIENCE PORTFOLIO
+   THEME: Subtle Premium Anime-Inspired Aesthetic + Retro Pixel Art Hero
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  /* Core Color Palette (Default: Night Mode) */
+  --bg-deep: #07080a;
+  --bg-primary: #0b0c10;
+  --bg-secondary: #12141a;
+  --bg-card: #151821;
+  --bg-card-hover: #1b1f2b;
+  --bg-glass: rgba(18, 20, 26, 0.82);
+  
+  /* Orange Brand Accents */
+  --orange-primary: #ff6b00;
+  --orange-light: #ff852e;
+  --orange-glow: rgba(255, 107, 0, 0.25);
+  --orange-glow-strong: rgba(255, 107, 0, 0.5);
+  --orange-subtle: rgba(255, 107, 0, 0.08);
+
+  /* Secondary Accents */
+  --crimson-accent: #c52222;
+  --crimson-glow: rgba(197, 34, 34, 0.3);
+  
+  /* Typography Colors */
+  --text-white: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #8892b0;
+  --text-faint: #4b5563;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-panel: rgba(255, 107, 0, 0.22);
+  --border-active: #ff6b00;
+
+  /* Pixel Art Design Tokens */
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-pixel-sub: 'Silkscreen', monospace;
+  --pixel-border: #ff6b00;
+  --pixel-bg-box: rgba(18, 20, 26, 0.88);
+  --pixel-shadow: #000000;
+  --pixel-text-accent: #fbbf24;
+
+  /* Hero Pixel Background Assets */
+  --hero-bg-img: url('../assets/hero_pixel_bg.png');
+  --hero-bg-overlay: linear-gradient(180deg, rgba(7, 8, 10, 0.72) 0%, rgba(11, 12, 16, 0.85) 60%, rgba(7, 8, 10, 0.98) 100%);
+
+  /* Typography Families */
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-jp: 'Noto Sans JP', sans-serif;
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s var(--ease-smooth);
+  --transition-normal: 0.35s var(--ease-spring);
+  --transition-slow: 0.6s var(--ease-spring);
+
+  /* ==========================================================================
+     VISUAL EFFECTS DESIGN TOKENS (BLUR, SHADOWS, ROUNDED CORNERS & TRANSITIONS)
+     ========================================================================== */
+  
+  /* EFFECT: Consistent Rounded Corners — Unified geometry across UI elements */
+  --radius-xs: 4px;       /* Micro elements: tags, chips, corner accents */
+  --radius-sm: 6px;       /* Compact controls, subtext pills, icon containers */
+  --radius-btn: 8px;      /* Interactive buttons, form inputs, toggle buttons */
+  --radius-card: 14px;    /* Cards, manga panels, dossiers, modals, hero frame */
+  --radius-pill: 9999px;  /* Rounded status indicators, floating pills */
+
+  /* EFFECT: Multi-layer Ambient Drop Shadows — Provide physical depth and elevate cards above dark backdrops */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 10px 30px -6px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-card-hover: 0 20px 45px -8px rgba(0, 0, 0, 0.82), 0 0 26px var(--orange-glow), 0 0 0 1px var(--orange-primary);
+  --shadow-btn: 0 4px 14px var(--orange-glow);
+  --shadow-btn-hover: 0 8px 24px var(--orange-glow-strong);
+  --shadow-floating: 0 25px 60px -15px rgba(0, 0, 0, 0.88), 0 0 30px rgba(255, 107, 0, 0.12);
+
+  /* EFFECT: Frosted Glass Backdrop Blur — Creates atmospheric layering by softly diffusing falling background flowers */
+  --blur-card: blur(14px);
+  --blur-panel: blur(20px);
+  --blur-overlay: blur(8px);
+
+  /* Layout */
+  --max-width: 1200px;
+  --header-height: 72px;
+  --sidebar-width: 260px;
+}
+
+/* ==========================================================================
+   NIGHT / DAY MODE VIA CSS MEDIA QUERIES (DEFAULT BROWSER THEME DETECTION)
+   ========================================================================== */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg-deep: #eef2f6;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --bg-glass: rgba(255, 255, 255, 0.88);
+
+    --text-white: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --text-faint: #94a3b8;
+
+    --border-subtle: rgba(0, 0, 0, 0.1);
+    --border-panel: rgba(234, 88, 12, 0.32);
+    --border-active: #ea580c;
+
+    --orange-primary: #ea580c;
+    --orange-light: #f97316;
+    --orange-glow: rgba(234, 88, 12, 0.22);
+    --orange-glow-strong: rgba(234, 88, 12, 0.45);
+    --orange-subtle: rgba(234, 88, 12, 0.08);
+
+    --pixel-border: #ea580c;
+    --pixel-bg-box: rgba(255, 255, 255, 0.92);
+    --pixel-shadow: #cbd5e1;
+    --pixel-text-accent: #d97706;
+
+    /* EFFECT: Light Mode Ambient Drop Shadows — Calibrated for clean paper/glass contrast */
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 10px 30px -6px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    --shadow-card-hover: 0 20px 40px -8px rgba(234, 88, 12, 0.16), 0 0 22px rgba(234, 88, 12, 0.22), 0 0 0 1px var(--orange-primary);
+    --shadow-btn: 0 4px 14px rgba(234, 88, 12, 0.25);
+    --shadow-btn-hover: 0 8px 24px rgba(234, 88, 12, 0.4);
+    --shadow-floating: 0 25px 60px -15px rgba(0, 0, 0, 0.12);
+
+    --hero-bg-overlay: linear-gradient(180deg, rgba(238, 242, 246, 0.75) 0%, rgba(248, 250, 252, 0.88) 60%, rgba(238, 242, 246, 0.98) 100%);
+  }
+}
+
+/* Manual Theme Overrides via data-theme attribute */
+[data-theme="light"] {
+  --bg-deep: #eef2f6;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-glass: rgba(255, 255, 255, 0.88);
+
+  --text-white: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+
+  --border-subtle: rgba(0, 0, 0, 0.1);
+  --border-panel: rgba(234, 88, 12, 0.32);
+  --border-active: #ea580c;
+
+  --orange-primary: #ea580c;
+  --orange-light: #f97316;
+  --orange-glow: rgba(234, 88, 12, 0.22);
+  --orange-glow-strong: rgba(234, 88, 12, 0.45);
+  --orange-subtle: rgba(234, 88, 12, 0.08);
+
+  --pixel-border: #ea580c;
+  --pixel-bg-box: rgba(255, 255, 255, 0.92);
+  --pixel-shadow: #cbd5e1;
+  --pixel-text-accent: #d97706;
+
+  /* EFFECT: Light Mode Ambient Drop Shadows — Calibrated for clean paper/glass contrast */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 10px 30px -6px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 20px 40px -8px rgba(234, 88, 12, 0.16), 0 0 22px rgba(234, 88, 12, 0.22), 0 0 0 1px var(--orange-primary);
+  --shadow-btn: 0 4px 14px rgba(234, 88, 12, 0.25);
+  --shadow-btn-hover: 0 8px 24px rgba(234, 88, 12, 0.4);
+  --shadow-floating: 0 25px 60px -15px rgba(0, 0, 0, 0.12);
+
+  --hero-bg-overlay: linear-gradient(180deg, rgba(238, 242, 246, 0.75) 0%, rgba(248, 250, 252, 0.88) 60%, rgba(238, 242, 246, 0.98) 100%);
+}
+
+[data-theme="dark"] {
+  --bg-deep: #07080a;
+  --bg-primary: #0b0c10;
+  --bg-secondary: #12141a;
+  --bg-card: #151821;
+  --bg-card-hover: #1b1f2b;
+  --bg-glass: rgba(18, 20, 26, 0.82);
+
+  --text-white: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #8892b0;
+  --text-faint: #4b5563;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-panel: rgba(255, 107, 0, 0.22);
+  --border-active: #ff6b00;
+
+  --orange-primary: #ff6b00;
+  --orange-light: #ff852e;
+  --orange-glow: rgba(255, 107, 0, 0.25);
+  --orange-glow-strong: rgba(255, 107, 0, 0.5);
+  --orange-subtle: rgba(255, 107, 0, 0.08);
+
+  --pixel-border: #ff6b00;
+  --pixel-bg-box: rgba(18, 20, 26, 0.88);
+  --pixel-shadow: #000000;
+  --pixel-text-accent: #fbbf24;
+
+  --hero-bg-overlay: linear-gradient(180deg, rgba(7, 8, 10, 0.72) 0%, rgba(11, 12, 16, 0.85) 60%, rgba(7, 8, 10, 0.98) 100%);
+}
+
+/* Light / Contrast resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-secondary);
+  font-family: var(--font-main);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 107, 0, 0.07) 0%, transparent 45%),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+  background-position: 0 0, -1px -1px, -1px -1px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: #232733;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-primary);
+}
+
+::selection {
+  background: var(--orange-primary);
+  color: #000;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   CANVAS & ATMOSPHERIC EFFECTS
+   ========================================================================== */
+/* EFFECT: Background Sakura Flower & Particle Canvas — Renders delicate floating cherry blossom
+   petals falling gently across the screen behind glassmorphic UI panels without intercepting clicks */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.88;
+  will-change: transform;
+}
+
+.speedlines-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(circle, transparent 40%, rgba(255, 107, 0, 0.15) 100%);
+}
+
+.speedlines-overlay.active {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   VERTICAL NAVIGATION BAR (LEFT SIDE OF SCREEN)
+   ========================================================================== */
+.vertical-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid var(--border-panel);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 20px 24px 20px;
+  box-shadow: 12px 0 45px rgba(0, 0, 0, 0.65);
+  transition: transform 0.35s var(--ease-spring);
+  overflow-y: auto;
+}
+
+/* Glowing Neon Orange Right Energy Border Trace */
+.vertical-sidebar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--orange-primary) 30%, var(--orange-light) 70%, transparent);
+  box-shadow: 0 0 14px var(--orange-primary);
+  pointer-events: none;
+}
+
+/* Sidebar Top Section */
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar-brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.brand-callsign {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--orange-primary);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 10px var(--orange-primary);
+  animation: pulse-dot 2.4s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.brand-kanji {
+  font-family: var(--font-jp);
+  font-size: 0.72rem;
+  color: var(--orange-light);
+  letter-spacing: 0.15em;
+  opacity: 0.85;
+}
+
+.nav-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 107, 0, 0.07);
+  border: 1px solid rgba(255, 107, 0, 0.25);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--orange-light);
+  letter-spacing: 0.05em;
+}
+
+/* Vertical Navigation Menu (Middle Section) */
+.sidebar-nav {
+  margin: 24px 0;
+  flex-grow: 1;
+}
+
+.vertical-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+.vertical-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  /* EFFECT: Consistent Rounded Corners — Matches button token geometry */
+  border-radius: var(--radius-btn);
+  background: rgba(255, 255, 255, 0.02);
+  /* EFFECT: Background Blur — Softly reveals falling flowers behind sidebar navigation items */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  /* EFFECT: Smooth Spring Hover Transition — Responsive spring slide and color ramp on hover */
+  transition: transform 0.28s var(--ease-spring), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.28s var(--ease-spring);
+  position: relative;
+  overflow: hidden;
+}
+
+.vertical-nav-link-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vertical-nav-link-num {
+  font-family: var(--font-pixel-sub);
+  font-size: 0.68rem;
+  color: var(--orange-primary);
+}
+
+.vertical-nav-link-arrow {
+  color: var(--orange-primary);
+  opacity: 0;
+  transform: translateX(-6px);
+  /* EFFECT: Chevron Slide Hover Transition — Chevrons reveal with directional movement */
+  transition: transform 0.25s var(--ease-spring), opacity 0.2s ease;
+  font-size: 0.85rem;
+}
+
+/* EFFECT: Nav Item Hover & Active State — Translates right by 6px with subtle orange glow and border */
+.vertical-nav-link:hover, .vertical-nav-link.active {
+  background: rgba(255, 107, 0, 0.11);
+  border-color: var(--border-panel);
+  color: var(--text-white);
+  /* EFFECT: Ambient Drop Shadow Bloom on Nav Item */
+  box-shadow: 0 4px 18px var(--orange-subtle);
+  transform: translateX(6px);
+}
+
+.vertical-nav-link:hover .vertical-nav-link-arrow,
+.vertical-nav-link.active .vertical-nav-link-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* EFFECT: Active Nav Item Indicator Bar — Vertical neon accent line marking current scroll position */
+.vertical-nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--orange-primary);
+  box-shadow: 0 0 12px var(--orange-primary);
+  border-top-left-radius: var(--radius-btn);
+  border-bottom-left-radius: var(--radius-btn);
+}
+
+/* Sidebar Bottom Controls Section */
+.sidebar-bottom-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sidebar-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sidebar-cta-btn {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+/* EFFECT: Theme Toggle Control Button — Frosted glass pill button with hover lift */
+.btn-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.04);
+  /* EFFECT: Background Blur */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  /* EFFECT: Tactile Hover Transition */
+  transition: transform 0.25s var(--ease-spring), border-color 0.2s ease, color 0.2s ease, box-shadow 0.25s var(--ease-spring);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-theme-toggle:hover {
+  color: var(--orange-light);
+  border-color: var(--orange-primary);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px var(--orange-glow);
+}
+
+/* EFFECT: Audio Synthesizer Control Button — Compact frosted icon toggle */
+.btn-hud-sound {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  /* EFFECT: Background Blur */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 0.95rem;
+  cursor: pointer;
+  /* EFFECT: Tactile Hover Transition */
+  transition: transform 0.25s var(--ease-spring), border-color 0.2s ease, color 0.2s ease, box-shadow 0.25s var(--ease-spring);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-hud-sound:hover {
+  color: var(--orange-primary);
+  border-color: var(--orange-primary);
+  transform: translateY(-1.5px);
+  box-shadow: 0 0 12px var(--orange-glow);
+}
+
+.btn-hud-sound.active {
+  color: var(--orange-light);
+  border-color: var(--orange-primary);
+  background: rgba(255, 107, 0, 0.12);
+}
+
+/* Desktop Layout Offset */
+@media (min-width: 1025px) {
+  main, .site-footer {
+    margin-left: var(--sidebar-width);
+  }
+
+  .mobile-top-bar, .sidebar-backdrop {
+    display: none !important;
+  }
+}
+
+/* Mobile & Tablet Top Bar and Slide-out Drawer */
+@media (max-width: 1024px) {
+  .vertical-sidebar {
+    transform: translateX(-100%);
+    z-index: 10000;
+    box-shadow: 18px 0 60px rgba(0, 0, 0, 0.85);
+  }
+
+  .vertical-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .mobile-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: var(--bg-glass);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-panel);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  main {
+    padding-top: 64px;
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .sidebar-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    background: transparent;
+    color: var(--text-white);
+    font-size: 1.4rem;
+    padding: 6px;
+  }
+}
+
+
+/* ==========================================================================
+   BUTTONS & MANGA HUD UI ELEMENTS
+   ========================================================================== */
+
+/* EFFECT: Primary Action Button — High contrast orange button with light sheen reflection and soft elevation */
+.btn-manga-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--orange-primary);
+  color: #07080a;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  padding: 12px 24px;
+  /* EFFECT: Consistent Rounded Corners — Unified button geometry */
+  border-radius: var(--radius-btn);
+  position: relative;
+  overflow: hidden;
+  /* EFFECT: Tactile Hover Transition — Smooth spring reaction for button clicks and elevation */
+  transition: transform 0.28s var(--ease-spring), box-shadow 0.28s var(--ease-spring), background-color 0.2s ease;
+  /* EFFECT: Drop Shadow — Orange ambient glow providing depth on dark backgrounds */
+  box-shadow: var(--shadow-btn);
+}
+
+.btn-manga-primary:hover {
+  background: #ff7d1a;
+  /* EFFECT: Hover Glow Expansion — Elevates button and intensifies energy glow */
+  box-shadow: var(--shadow-btn-hover);
+  transform: translateY(-2.5px);
+}
+
+/* EFFECT: Manga Sheen Sweep Transition — Animates a specular highlight diagonal flare on hover */
+.btn-manga-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-25deg);
+  transition: 0.65s ease;
+}
+
+.btn-manga-primary:hover::before {
+  left: 150%;
+}
+
+/* EFFECT: Secondary Glassmorphic Button — Frosted glass texture with subtle border glow */
+.btn-manga-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  /* EFFECT: Background Blur — Softly blurs underlying content through the translucent button */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  padding: 11px 22px;
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--border-panel);
+  /* EFFECT: Smooth Hover Transition */
+  transition: transform 0.28s var(--ease-spring), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.28s var(--ease-spring);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-manga-secondary:hover {
+  background: rgba(255, 107, 0, 0.12);
+  border-color: var(--orange-primary);
+  color: var(--orange-light);
+  /* EFFECT: Hover Glow & Lift — Subtle 2px lift with orange outline aura */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 0 18px var(--orange-glow);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   MANGA PANEL BASE CARD (SHARED ACROSS ALL PORTFOLIO SECTIONS)
+   ========================================================================== */
+
+/* EFFECT: Glassmorphic Manga Panel — Semi-transparent dark glass surface with frosted blur,
+   multi-layer drop shadows, and consistent rounded corners that softly reveals falling background flowers */
+.manga-panel {
+  position: relative;
+  background: rgba(21, 24, 33, 0.72);
+  /* EFFECT: Background Blur — Diffuses the background cherry blossom flower particles and atmospheric glow */
+  backdrop-filter: var(--blur-card);
+  -webkit-backdrop-filter: var(--blur-card);
+  border: 1px solid var(--border-subtle);
+  /* EFFECT: Consistent Rounded Corners — Unified 14px curvature across cards */
+  border-radius: var(--radius-card);
+  /* EFFECT: Multi-layer Drop Shadow — Elevated depth separating the card from background */
+  box-shadow: var(--shadow-card);
+  /* EFFECT: Smooth Spring Hover Transition — Responsive spring motion for interaction feedback */
+  transition: transform 0.35s var(--ease-spring), box-shadow 0.35s var(--ease-spring), border-color 0.25s var(--ease-smooth);
+}
+
+.manga-panel:hover {
+  border-color: var(--border-panel);
+  /* EFFECT: Ambient Drop Shadow Bloom — Intensifies shadow depth and introduces a soft orange perimeter glow */
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Manga Corner HUD Accents — Stylized Sci-Fi HUD brackets aligned to card curves */
+.corner-accent {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+.corner-accent.tl { top: -1px; left: -1px; border-top: 2px solid var(--orange-primary); border-left: 2px solid var(--orange-primary); border-top-left-radius: var(--radius-card); }
+.corner-accent.tr { top: -1px; right: -1px; border-top: 2px solid var(--orange-primary); border-right: 2px solid var(--orange-primary); border-top-right-radius: var(--radius-card); }
+.corner-accent.bl { bottom: -1px; left: -1px; border-bottom: 2px solid var(--orange-primary); border-left: 2px solid var(--orange-primary); border-bottom-left-radius: var(--radius-card); }
+.corner-accent.br { bottom: -1px; right: -1px; border-bottom: 2px solid var(--orange-primary); border-right: 2px solid var(--orange-primary); border-bottom-right-radius: var(--radius-card); }
+
+/* Section Header Structure */
+.section-header-block {
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.section-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--orange-primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.section-kanji {
+  font-family: var(--font-jp);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  opacity: 0.8;
+  letter-spacing: 0.1em;
+}
+
+.section-line {
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 107, 0, 0.4), transparent 60%);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  margin-top: 8px;
+  max-width: 650px;
+}
+
+/* ==========================================================================
+   HERO SECTION — PIXEL ART STYLE WITH CUSTOM BACKGROUND IMAGE
+   ========================================================================== */
+.hero-section {
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-image: var(--hero-bg-overlay), var(--hero-bg-img);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* CRT Pixel Scanlines Overlay */
+.pixel-crt-scanlines {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.65;
+}
+
+.hero-backdrop-glow {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.18) 0%, rgba(220, 38, 38, 0.08) 45%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: atmospheric-drift 12s infinite alternate ease-in-out;
+}
+
+@keyframes atmospheric-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-40px, 30px) scale(1.1); }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Pixel Art Welcome Badge */
+.pixel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-pixel-sub);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  background: var(--pixel-bg-box);
+  color: var(--orange-primary);
+  border: 2px solid var(--pixel-border);
+  box-shadow: 4px 4px 0px var(--pixel-shadow);
+  padding: 8px 16px;
+  border-radius: 0px;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.pixel-blink {
+  animation: pixel-blink-anim 1s steps(2, start) infinite;
+  color: var(--pixel-text-accent);
+}
+
+@keyframes pixel-blink-anim {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.pixel-badge-sub {
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  background: var(--orange-primary);
+  color: #000;
+  padding: 2px 6px;
+  border-radius: 0px;
+}
+
+/* Pixel Art Headings */
+.pixel-hero-heading {
+  margin-bottom: 20px;
+}
+
+.pixel-greeting {
+  display: block;
+  font-family: var(--font-pixel);
+  font-size: 1.05rem;
+  color: var(--orange-light);
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0px var(--pixel-shadow);
+}
+
+.pixel-name-wrapper {
+  position: relative;
+  display: inline-block;
+  color: var(--text-white);
+  font-family: var(--font-heading);
+  font-size: 3.3rem;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-shadow: 3px 3px 0px var(--pixel-shadow);
+}
+
+.pixel-underline {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--orange-primary);
+  box-shadow: 2px 2px 0px var(--pixel-shadow);
+  animation: pixel-underline-pulse 2.5s infinite steps(4);
+}
+
+@keyframes pixel-underline-pulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
+
+/* Pixel Art Tagline */
+.pixel-tagline {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 600px;
+  background: var(--pixel-bg-box);
+  border-left: 4px solid var(--orange-primary);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--orange-primary);
+  padding: 16px 20px;
+  box-shadow: 4px 4px 0px var(--pixel-shadow);
+  margin-bottom: 24px;
+}
+
+.pixel-tagline strong {
+  color: var(--text-white);
+}
+
+/* Retro RPG Stats HUD Bar */
+.pixel-stats-hud {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.pixel-stat-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  background: var(--pixel-bg-box);
+  border: 1px solid var(--border-subtle);
+  padding: 7px 12px;
+  box-shadow: 3px 3px 0px var(--pixel-shadow);
+}
+
+.pixel-stat-icon {
+  font-size: 0.85rem;
+}
+
+.pixel-stat-name {
+  font-family: var(--font-pixel);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+}
+
+.pixel-stat-bar {
+  width: 55px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #475569;
+  position: relative;
+}
+
+.pixel-stat-fill.hp {
+  width: 100%;
+  height: 100%;
+  background: #22c55e;
+}
+
+.pixel-stat-fill.mp {
+  width: 95%;
+  height: 100%;
+  background: #38bdf8;
+}
+
+.pixel-stat-num, .pixel-stat-val {
+  font-family: var(--font-pixel-sub);
+  font-size: 0.7rem;
+  color: var(--text-white);
+  font-weight: 700;
+}
+
+/* Pixel Art Buttons */
+.pixel-cta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn-pixel-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-pixel-sub);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: var(--orange-primary);
+  color: #07080a;
+  padding: 12px 22px;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0px var(--pixel-shadow);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  cursor: pointer;
+}
+
+.btn-pixel-primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--pixel-shadow);
+  background: var(--orange-light);
+}
+
+.btn-pixel-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-pixel-sub);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: var(--pixel-bg-box);
+  color: var(--text-white);
+  padding: 12px 22px;
+  border: 2px solid var(--border-panel);
+  box-shadow: 4px 4px 0px var(--pixel-shadow);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  cursor: pointer;
+}
+
+.btn-pixel-secondary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--pixel-shadow);
+  color: var(--orange-primary);
+  border-color: var(--orange-primary);
+}
+
+.btn-pixel-mode {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-pixel-sub);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--pixel-bg-box);
+  color: var(--orange-primary);
+  padding: 10px 16px;
+  border: 2px solid var(--pixel-border);
+  box-shadow: 4px 4px 0px var(--pixel-shadow);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  cursor: pointer;
+}
+
+.btn-pixel-mode:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--pixel-shadow);
+}
+
+.btn-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-pixel-sub);
+  font-size: 0.76rem;
+  font-weight: 700;
+  background: var(--pixel-bg-box);
+  color: var(--orange-primary);
+  padding: 8px 12px;
+  border: 2px solid var(--border-panel);
+  box-shadow: 2px 2px 0px var(--pixel-shadow);
+  border-radius: 0px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-theme-toggle:hover {
+  border-color: var(--orange-primary);
+  transform: translateY(-1px);
+}
+
+/* Left Hero Content */
+.hero-meta-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 107, 0, 0.08);
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.hero-meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--orange-primary);
+  letter-spacing: 0.14em;
+}
+
+.hero-meta-jp {
+  font-family: var(--font-jp);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.hero-heading {
+  font-family: var(--font-heading);
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.hero-greeting {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-family: var(--font-mono);
+}
+
+.hero-name-wrapper {
+  position: relative;
+  display: inline-block;
+  color: var(--text-white);
+}
+
+.hero-name-underline {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--orange-primary), #ff3800);
+  border-radius: 3px;
+  box-shadow: 0 0 14px var(--orange-primary);
+  animation: underline-pulse 3s infinite ease-in-out;
+}
+
+@keyframes underline-pulse {
+  0%, 100% {
+    box-shadow: 0 0 14px var(--orange-primary);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 24px var(--orange-light), 0 0 35px rgba(255, 107, 0, 0.6);
+    filter: brightness(1.2);
+  }
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 28px;
+}
+
+.hero-description strong {
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+/* Hero HUD Metrics Row */
+.hero-hud-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.hud-stat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-stat-val {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.hud-stat-val span {
+  color: var(--orange-primary);
+  font-size: 0.9em;
+}
+
+.hud-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Right Hero Media Dossier */
+.hero-media-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* EFFECT: Hero Media Frame Container — Elevated glassmorphic picture frame with deep floating drop shadow */
+.hero-frame-container {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  /* EFFECT: Consistent Rounded Corners — Unified 14px curvature */
+  border-radius: var(--radius-card);
+  background: rgba(21, 24, 33, 0.78);
+  /* EFFECT: Background Blur — Frosted glass softening background falling flowers */
+  backdrop-filter: var(--blur-panel);
+  -webkit-backdrop-filter: var(--blur-panel);
+  border: 1px solid var(--border-panel);
+  /* EFFECT: Multi-layer Floating Drop Shadow */
+  box-shadow: var(--shadow-floating);
+  overflow: hidden;
+  /* EFFECT: Smooth Spring Hover Transition */
+  transition: transform 0.4s var(--ease-spring), border-color 0.3s ease, box-shadow 0.4s var(--ease-spring);
+}
+
+.hero-frame-container:hover {
+  border-color: var(--orange-primary);
+  /* EFFECT: Hover Elevation & Glow Aura */
+  transform: translateY(-4px);
+  box-shadow: 0 30px 65px -10px rgba(0, 0, 0, 0.9), 0 0 35px var(--orange-glow);
+}
+
+/* Photo Treatment with Orange Rim Light & Anime manga accents */
+.photo-display-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #0a0b0f;
+}
+
+.photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  /* EFFECT: Image Parallax Zoom Hover Transition */
+  transition: transform 0.6s var(--ease-spring), opacity 0.4s ease;
+  filter: contrast(1.05) brightness(0.98);
+}
+
+.photo-display-viewport:hover .photo-img {
+  transform: scale(1.04);
+}
+
+/* Anime Cinematic Rim Light Overlay */
+.photo-rim-lighting {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(ellipse at bottom right, rgba(255, 107, 0, 0.28) 0%, transparent 60%),
+    radial-gradient(ellipse at top left, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+    linear-gradient(to top, rgba(11, 12, 16, 0.8) 0%, transparent 40%);
+  mix-blend-mode: screen;
+}
+
+.photo-scan-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(255, 255, 255, 0.015) 3px,
+    rgba(255, 255, 255, 0.015) 6px
+  );
+  opacity: 0.7;
+}
+
+/* Frame HUD Header & Footer */
+.frame-hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(14, 16, 22, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.hud-callsign {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hud-status-live {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #22c55e;
+}
+
+.frame-hud-footer {
+  padding: 12px 16px;
+  background: rgba(14, 16, 22, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Mode Switcher Pill (Real Photo <-> Anime Avatar) */
+.avatar-mode-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px;
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--border-subtle);
+}
+
+.switch-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  padding-left: 6px;
+}
+
+.switch-options {
+  display: flex;
+  gap: 4px;
+}
+
+.switch-btn {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
+  /* EFFECT: Consistent Micro Rounded Corners */
+  border-radius: var(--radius-xs);
+  color: var(--text-muted);
+  cursor: pointer;
+  /* EFFECT: Smooth Mode Toggle Transition */
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.switch-btn.active {
+  background: var(--orange-primary);
+  color: #07080a;
+  box-shadow: 0 0 10px var(--orange-glow);
+}
+
+/* EFFECT: Floating Persona Badge — Semi-transparent companion badge with soft lift on hover */
+.persona-companion-badge {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(18, 20, 26, 0.78);
+  /* EFFECT: Background Blur */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-panel);
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  padding: 10px 14px;
+  width: 100%;
+  max-width: 380px;
+  /* EFFECT: Subtle Drop Shadow */
+  box-shadow: var(--shadow-sm);
+  /* EFFECT: Smooth Hover Transition */
+  transition: transform 0.3s var(--ease-spring), border-color 0.25s ease, box-shadow 0.3s var(--ease-spring);
+}
+
+.persona-companion-badge:hover {
+  transform: translateY(-2.5px);
+  border-color: var(--orange-primary);
+  box-shadow: var(--shadow-card);
+}
+
+.companion-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 107, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange-primary);
+  font-size: 1rem;
+}
+
+.companion-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.companion-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: 0.05em;
+}
+
+.companion-sub {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--orange-light);
+}
+
+/* ==========================================================================
+   ABOUT SECTION — CHARACTER PROFILE // 01
+   ========================================================================== */
+.about-section {
+  padding: 100px 0;
+  position: relative;
+  background: linear-gradient(180deg, transparent, rgba(14, 16, 22, 0.6) 20%, rgba(14, 16, 22, 0.6) 80%, transparent);
+}
+
+.character-card-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+/* EFFECT: Character Dossier Card — Glassmorphic identity card with multi-layer shadow and frosted blur */
+.character-dossier {
+  background: rgba(21, 24, 33, 0.72);
+  /* EFFECT: Background Blur */
+  backdrop-filter: var(--blur-card);
+  -webkit-backdrop-filter: var(--blur-card);
+  border: 1px solid var(--border-panel);
+  /* EFFECT: Consistent Rounded Corners — Unified 14px curvature */
+  border-radius: var(--radius-card);
+  padding: 28px;
+  position: relative;
+  /* EFFECT: Ambient Drop Shadow */
+  box-shadow: var(--shadow-card);
+  /* EFFECT: Smooth Spring Hover Transition */
+  transition: transform 0.35s var(--ease-spring), border-color 0.25s ease, box-shadow 0.35s var(--ease-spring);
+}
+
+.character-dossier:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange-primary);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.dossier-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.dossier-id {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--orange-primary);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.dossier-class {
+  font-family: var(--font-jp);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.dossier-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dossier-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.field-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.field-value {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.field-value.highlight {
+  color: var(--orange-primary);
+}
+
+.interests-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+/* EFFECT: Interest Pills — Rounded status chips with subtle glass blur */
+.interest-pill {
+  background: rgba(255, 107, 0, 0.08);
+  border: 1px solid rgba(255, 107, 0, 0.22);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  /* EFFECT: Pill Rounded Corners */
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.interest-pill:hover {
+  transform: translateY(-1.5px);
+  border-color: var(--orange-primary);
+  color: var(--text-white);
+}
+
+.quest-quote-box {
+  margin-top: 18px;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-left: 3px solid var(--orange-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.quest-quote-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--orange-primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.quest-quote-val {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-white);
+  font-style: italic;
+}
+
+/* Right Story Narrative */
+.about-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.story-lead-text {
+  font-size: 1.25rem;
+  color: var(--text-white);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.story-lead-text span {
+  color: var(--orange-primary);
+}
+
+.story-paragraph {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Attributes Grid */
+.attributes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* EFFECT: Attribute Card — Translucent frosted panel with hover lift and perimeter border lighting */
+.attribute-card {
+  background: rgba(21, 24, 33, 0.72);
+  /* EFFECT: Background Blur */
+  backdrop-filter: var(--blur-card);
+  -webkit-backdrop-filter: var(--blur-card);
+  border: 1px solid var(--border-subtle);
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  padding: 18px 20px;
+  /* EFFECT: Drop Shadow */
+  box-shadow: var(--shadow-sm);
+  /* EFFECT: Smooth Spring Hover Transition */
+  transition: transform 0.28s var(--ease-spring), border-color 0.25s ease, box-shadow 0.28s var(--ease-spring);
+}
+
+.attribute-card:hover {
+  border-color: var(--border-panel);
+  /* EFFECT: Interactive Lift & Shadow Expansion */
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.attribute-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.attribute-name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.attribute-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--orange-light);
+  background: rgba(255, 107, 0, 0.1);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.attribute-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   PROJECTS SECTION — MANGA PANELS ARCHIVE
+   ========================================================================== */
+.projects-section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.projects-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+/* EFFECT: Filter Buttons — Frosted pill buttons with tactile spring hover transition */
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  padding: 8px 16px;
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  background: rgba(255, 255, 255, 0.04);
+  /* EFFECT: Background Blur */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  cursor: pointer;
+  /* EFFECT: Tactile Hover Transition */
+  transition: transform 0.25s var(--ease-spring), border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.25s var(--ease-spring), color 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  color: var(--text-white);
+  border-color: var(--orange-primary);
+  background: rgba(255, 107, 0, 0.14);
+  /* EFFECT: Subtle Button Elevation on Hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--orange-subtle);
+}
+
+/* Manga Panel Project Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* EFFECT: Project Panel Card — Flagship manga showcase card with frosted glass blur,
+   multi-layer drop shadows, consistent rounded corners, and dramatic elevation on hover */
+.project-panel-card {
+  background: rgba(21, 24, 33, 0.75);
+  /* EFFECT: Background Blur — Reveals floating flower petals softly behind the card */
+  backdrop-filter: var(--blur-card);
+  -webkit-backdrop-filter: var(--blur-card);
+  border: 1px solid var(--border-subtle);
+  /* EFFECT: Consistent Rounded Corners — Unified 14px curvature */
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  /* EFFECT: Multi-layer Ambient Drop Shadow */
+  box-shadow: var(--shadow-card);
+  /* EFFECT: Card Elevation Hover Transition — 10px lift with spring physics */
+  transition: transform 0.4s var(--ease-spring), border-color 0.3s ease, box-shadow 0.4s var(--ease-spring);
+}
+
+.project-panel-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--orange-primary);
+  /* EFFECT: Drop Shadow Bloom — Expands shadow spread and projects an orange neon halo */
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Manga Speed Lines Overlay on Card Hover */
+.manga-speedline-fx {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 12px,
+    rgba(255, 107, 0, 0.04) 12px,
+    rgba(255, 107, 0, 0.04) 14px
+  );
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.project-panel-card:hover .manga-speedline-fx {
+  opacity: 1;
+}
+
+/* Panel Header */
+.panel-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: rgba(14, 16, 22, 0.85);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.panel-case-num {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--orange-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel-case-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Media Thumbnail */
+.panel-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #090a0e;
+}
+
+.panel-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-spring), filter 0.3s ease;
+}
+
+.project-panel-card:hover .panel-thumb {
+  transform: scale(1.06);
+}
+
+.panel-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(17, 18, 24, 0.95) 100%);
+  pointer-events: none;
+}
+
+/* Floating View Project Action Banner on Hover */
+.panel-view-action-banner {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #07080a;
+  background: var(--orange-primary);
+  padding: 4px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: var(--transition-fast);
+  box-shadow: 0 0 12px var(--orange-primary);
+  pointer-events: none;
+}
+
+.project-panel-card:hover .panel-view-action-banner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Panel Body */
+.panel-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+  z-index: 3;
+}
+
+.panel-title {
+  font-family: var(--font-heading);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.panel-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.panel-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.panel-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.panel-btn-link {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--orange-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.panel-btn-link:hover {
+  color: var(--text-white);
+  text-shadow: 0 0 8px var(--orange-primary);
+}
+
+.panel-btn-github {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.panel-btn-github:hover {
+  color: var(--text-white);
+}
+
+/* ==========================================================================
+   SKILLS SECTION — POWER SYSTEM STYLE (NO FAKE PERCENTAGES!)
+   ========================================================================== */
+.skills-section {
+  padding: 100px 0;
+  position: relative;
+  background: linear-gradient(180deg, transparent, rgba(14, 16, 22, 0.5) 50%, transparent);
+}
+
+.skills-layout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* EFFECT: Skill Category Box — Translucent ability matrix tier container with glass blur and rounded geometry */
+.skill-category-box {
+  background: rgba(21, 24, 33, 0.72);
+  /* EFFECT: Background Blur */
+  backdrop-filter: var(--blur-card);
+  -webkit-backdrop-filter: var(--blur-card);
+  border: 1px solid var(--border-subtle);
+  /* EFFECT: Consistent Rounded Corners — Unified 14px curvature */
+  border-radius: var(--radius-card);
+  padding: 24px;
+  position: relative;
+  /* EFFECT: Drop Shadow */
+  box-shadow: var(--shadow-card);
+  /* EFFECT: Smooth Spring Transition */
+  transition: transform 0.35s var(--ease-spring), border-color 0.25s ease, box-shadow 0.35s var(--ease-spring);
+}
+
+.skill-category-box:hover {
+  border-color: var(--border-panel);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.skill-category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.skill-cat-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-cat-icon {
+  color: var(--orange-primary);
+  font-size: 1.1rem;
+}
+
+.skill-cat-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* EFFECT: Skill Item Card — Compact individual skill card with horizontal slide hover transition */
+.skill-item-card {
+  background: rgba(255, 255, 255, 0.03);
+  /* EFFECT: Background Blur */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  /* EFFECT: Tactile Horizontal Slide Hover Transition */
+  transition: transform 0.25s var(--ease-spring), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.25s var(--ease-spring);
+}
+
+.skill-item-card:hover {
+  background: rgba(255, 107, 0, 0.08);
+  border-color: var(--border-panel);
+  /* EFFECT: Interactive 6px Slide & Glow */
+  transform: translateX(6px);
+  box-shadow: 0 4px 16px var(--orange-subtle);
+}
+
+.skill-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.skill-name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+/* EFFECT: Descriptive Mastery Badges — Pill-shaped milestone chips */
+.mastery-level-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  /* EFFECT: Pill Curvature */
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.2s ease;
+}
+
+.mastery-level-pill:hover {
+  transform: scale(1.05);
+}
+
+.mastery-level-pill.building {
+  color: #ff852e;
+  background: rgba(255, 133, 46, 0.12);
+  border: 1px solid rgba(255, 133, 46, 0.35);
+}
+
+.mastery-level-pill.practicing {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.mastery-level-pill.learning {
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+}
+
+.mastery-level-pill.improving {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+}
+
+.skill-subtext {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-bottom: 6px;
+}
+
+.skill-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   CURRENT QUEST SECTION — ANIME RPG QUEST LOG
+   ========================================================================== */
+.quest-section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.quest-board-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* EFFECT: Quest Card — Frosted mission terminal card with multi-layer drop shadows and spring hover lift */
+.quest-card {
+  background: rgba(21, 24, 33, 0.75);
+  /* EFFECT: Background Blur */
+  backdrop-filter: var(--blur-card);
+  -webkit-backdrop-filter: var(--blur-card);
+  border: 1px solid var(--border-subtle);
+  /* EFFECT: Consistent Rounded Corners — Unified 14px curvature */
+  border-radius: var(--radius-card);
+  padding: 24px;
+  position: relative;
+  /* EFFECT: Drop Shadow */
+  box-shadow: var(--shadow-card);
+  /* EFFECT: Card Elevation Hover Transition */
+  transition: transform 0.35s var(--ease-spring), border-color 0.25s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.quest-card:hover {
+  /* EFFECT: 8px Lift & Aura Bloom */
+  transform: translateY(-8px);
+  border-color: var(--orange-primary);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.quest-card.featured {
+  border-color: rgba(255, 107, 0, 0.4);
+  background: linear-gradient(135deg, rgba(255, 107, 0, 0.06) 0%, rgba(21, 24, 33, 0.8) 60%);
+}
+
+.quest-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.quest-index {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--orange-primary);
+  letter-spacing: 0.08em;
+}
+
+.quest-type-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.05em;
+}
+
+.quest-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.quest-details {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+/* EFFECT: Quest Meta Box — Inset terminal row with subtle glass background */
+.quest-meta-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  border-left: 3px solid var(--orange-primary);
+}
+
+.quest-target-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quest-target-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.quest-status-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #22c55e;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.quest-status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+.quest-reward-text {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--orange-light);
+}
+
+/* ==========================================================================
+   CONTACT SECTION — FINAL SCENE
+   ========================================================================== */
+.contact-section {
+  padding: 120px 0 100px;
+  position: relative;
+  background: 
+    radial-gradient(ellipse at 50% 100%, rgba(255, 107, 0, 0.12) 0%, transparent 70%),
+    linear-gradient(180deg, transparent, #090a0d 60%);
+  overflow: hidden;
+}
+
+.final-scene-horizon-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--orange-primary), #ff3d00, var(--orange-primary), transparent);
+  box-shadow: 0 0 20px var(--orange-primary), 0 0 40px var(--orange-light);
+}
+
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.contact-narrative-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-lead-heading {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.contact-lead-sub {
+  font-size: 1.12rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+.contact-quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* EFFECT: Contact Quick Link Card — Interactive frosted glass card with horizontal slide and glow */
+.contact-link-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(21, 24, 33, 0.72);
+  /* EFFECT: Background Blur */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  padding: 14px 20px;
+  box-shadow: var(--shadow-sm);
+  /* EFFECT: Smooth Spring Hover Transition */
+  transition: transform 0.28s var(--ease-spring), border-color 0.25s ease, background-color 0.2s ease, box-shadow 0.28s var(--ease-spring);
+}
+
+.contact-link-card:hover {
+  border-color: var(--orange-primary);
+  background: rgba(255, 107, 0, 0.08);
+  /* EFFECT: Slide & Shadow Bloom */
+  transform: translateX(8px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.contact-link-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-link-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 107, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange-primary);
+  font-size: 1.1rem;
+}
+
+.contact-link-label {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.contact-link-val {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.contact-arrow-icon {
+  color: var(--orange-primary);
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.contact-link-card:hover .contact-arrow-icon {
+  transform: scale(1.1);
+}
+
+/* EFFECT: Contact Message Form Panel — Elevated glass console with frosted blur and multi-layer shadow */
+.contact-form-panel {
+  background: rgba(21, 24, 33, 0.78);
+  /* EFFECT: Background Blur */
+  backdrop-filter: var(--blur-panel);
+  -webkit-backdrop-filter: var(--blur-panel);
+  border: 1px solid var(--border-panel);
+  /* EFFECT: Consistent Rounded Corners — Unified 14px curvature */
+  border-radius: var(--radius-card);
+  padding: 32px;
+  /* EFFECT: Multi-layer Drop Shadow */
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.form-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.form-header-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--orange-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* EFFECT: Interactive Form Controls — Frosted inputs with focus glow and rounded corners */
+.form-control {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  /* EFFECT: Background Blur */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  padding: 12px 14px;
+  font-family: var(--font-main);
+  font-size: 0.92rem;
+  color: var(--text-white);
+  /* EFFECT: Smooth Focus Transition */
+  transition: border-color 0.2s ease, box-shadow 0.25s var(--ease-spring), background-color 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--orange-primary);
+  /* EFFECT: Focus Glow Expansion */
+  box-shadow: 0 0 16px var(--orange-glow);
+  background: rgba(14, 16, 22, 0.85);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-submit-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Toast Notification for copying email / messages */
+.hud-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--orange-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--orange-glow);
+  border-radius: 6px;
+  padding: 12px 20px;
+  color: var(--text-white);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s var(--ease-spring);
+}
+
+.hud-toast.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   EASTER EGGS & SECRET HUD SYSTEM
+   ========================================================================== */
+/* Easter Egg 1: System Online Overlay Banner */
+.system-online-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.system-online-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.system-online-banner {
+  background: var(--bg-card);
+  border: 2px solid var(--orange-primary);
+  box-shadow: 0 0 50px var(--orange-glow-strong);
+  padding: 36px 48px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 540px;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.system-online-overlay.active .system-online-banner {
+  transform: scale(1);
+}
+
+.system-banner-kanji {
+  font-family: var(--font-jp);
+  font-size: 1.4rem;
+  color: var(--orange-primary);
+  margin-bottom: 8px;
+}
+
+.system-banner-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.system-banner-sub {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Easter Egg 2: Scroll 100% Manga Stamp */
+.scroll-stamp-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(18, 20, 26, 0.95);
+  border: 1px solid var(--orange-primary);
+  border-radius: 6px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  z-index: 99;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.4s var(--ease-spring);
+}
+
+.scroll-stamp-toast.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.stamp-kanji {
+  font-family: var(--font-jp);
+  color: var(--orange-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.stamp-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stamp-heading {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.stamp-sub {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--orange-light);
+}
+
+/* Floating HUD Controls Widget (Bottom Right) */
+.hud-quick-controls {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(14, 16, 22, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-panel);
+  border-radius: 30px;
+  padding: 6px 12px;
+  z-index: 90;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.hud-ctrl-btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 16px;
+  transition: var(--transition-fast);
+}
+
+.hud-ctrl-btn:hover, .hud-ctrl-btn.active {
+  color: var(--orange-primary);
+  background: rgba(255, 107, 0, 0.1);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border-subtle);
+  background: #050608;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footer-copy span {
+  color: var(--orange-primary);
+}
+
+.footer-quote {
+  font-family: var(--font-jp);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-social-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.footer-social-link:hover {
+  color: var(--orange-primary);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-media-wrapper {
+    order: -1;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .character-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2.6rem;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quest-board-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .attributes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background: var(--bg-deep);
+    border-bottom: 1px solid var(--border-panel);
+    flex-direction: column;
+    padding: 24px;
+    gap: 18px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .hero-hud-strip {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .hud-quick-controls {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   PROJECT DOSSIER MODAL STYLES
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 5, 8, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* EFFECT: Project Dossier Modal Card — Floating glassmorphic dialogue window with deep shadow and rounded corners */
+.modal-content-dossier {
+  background: rgba(21, 24, 33, 0.88);
+  /* EFFECT: Background Blur */
+  backdrop-filter: var(--blur-panel);
+  -webkit-backdrop-filter: var(--blur-panel);
+  border: 1px solid var(--orange-primary);
+  /* EFFECT: Multi-layer Floating Shadow & Neon Glow */
+  box-shadow: var(--shadow-floating), 0 0 35px var(--orange-glow);
+  /* EFFECT: Consistent Rounded Corners — Unified 14px curvature */
+  border-radius: var(--radius-card);
+  max-width: 720px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.95);
+  /* EFFECT: Smooth Modal Pop-in Spring Transition */
+  transition: transform 0.35s var(--ease-spring);
+}
+
+.modal-overlay.active .modal-content-dossier {
+  transform: scale(1);
+}
+
+.modal-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: rgba(14, 16, 22, 0.95);
+  border-bottom: 1px solid var(--border-subtle);
+  border-top-left-radius: var(--radius-card);
+  border-top-right-radius: var(--radius-card);
+}
+
+/* EFFECT: Modal Close Button — Frosted square toggle with hover glow */
+.modal-close-icon {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  width: 32px;
+  height: 32px;
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* EFFECT: Tactile Hover Transition */
+  transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.modal-close-icon:hover {
+  color: var(--orange-primary);
+  background: rgba(255, 107, 0, 0.15);
+  transform: scale(1.08);
+}
+
+.modal-inner-body {
+  padding: 24px;
+}
+
+.modal-preview-img {
+  width: 100%;
+  /* EFFECT: Consistent Rounded Corners */
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 20px;
+}
+
+.modal-spec-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.modal-spec-list li {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.modal-spec-list li::before {
+  content: '▸';
+  color: var(--orange-primary);
+}
+
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   ONE PIECE ANIME THEMED CURSOR & MOVEMENT TRAIL
+   ========================================================================== */
+@media (hover: hover) and (pointer: fine) {
+  body.op-cursor-enabled {
+    cursor: none !important;
+  }
+  body.op-cursor-enabled a,
+  body.op-cursor-enabled button,
+  body.op-cursor-enabled input,
+  body.op-cursor-enabled textarea,
+  body.op-cursor-enabled [role="button"],
+  body.op-cursor-enabled .manga-panel,
+  body.op-cursor-enabled .filter-btn,
+  body.op-cursor-enabled .nav-link {
+    cursor: none !important;
+  }
+}
+
+.op-cursor-pointer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  pointer-events: none;
+  z-index: 100000;
+  transform: translate(-6px, -4px);
+  will-change: transform;
+  transition: opacity 0.2s ease;
+  display: none;
+}
+
+body.op-cursor-enabled .op-cursor-pointer {
+  display: block;
+}
+
+.op-cursor-strawhat {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease;
+  transform-origin: 6px 4px;
+}
+
+.op-cursor-pointer.hovering .op-cursor-strawhat {
+  transform: scale(1.25) rotate(-14deg);
+  filter: drop-shadow(0 0 12px rgba(239, 68, 68, 0.85)) drop-shadow(0 0 20px rgba(251, 191, 36, 0.7));
+}
+
+.op-cursor-pointer.clicking .op-cursor-strawhat {
+  transform: scale(0.9) rotate(8deg);
+}
+
+/* Follower Aura (Conqueror's Haki + Sun Aura) */
+.op-cursor-aura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  margin-top: -19px;
+  margin-left: -19px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.16) 0%, rgba(245, 158, 11, 0.08) 50%, transparent 75%);
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.25), inset 0 0 10px rgba(245, 158, 11, 0.15);
+  transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease, border-color 0.25s ease, background 0.25s ease, opacity 0.2s ease;
+  will-change: transform;
+  display: none;
+}
+
+body.op-cursor-enabled .op-cursor-aura {
+  display: block;
+}
+
+.op-cursor-aura.hovering {
+  width: 56px;
+  height: 56px;
+  margin-top: -28px;
+  margin-left: -28px;
+  border: 2px solid #ef4444;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.3) 0%, rgba(251, 191, 36, 0.18) 60%, transparent 80%);
+  box-shadow: 0 0 24px rgba(239, 68, 68, 0.7), inset 0 0 15px rgba(251, 191, 36, 0.35);
+  animation: haki-pulse 1.3s infinite ease-in-out;
+}
+
+@keyframes haki-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.6);
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.9), 0 0 16px rgba(251, 191, 36, 0.6);
+  }
+}
+
+/* Movement Trail Particles (Emitted while moving) */
+.op-trail-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99997;
+  border-radius: 50%;
+  animation: op-particle-fade 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes op-particle-fade {
+  0% {
+    transform: translate(var(--tx, 0), var(--ty, 0)) scale(var(--init-scale, 1)) rotate(0deg);
+    opacity: var(--init-op, 0.9);
+  }
+  100% {
+    transform: translate(calc(var(--tx, 0) + var(--drift-x, 0px)), calc(var(--ty, 0) + var(--drift-y, 0px))) scale(0.15) rotate(var(--rot, 35deg));
+    opacity: 0;
+  }
+}
+
+/* Text Sparkle ("✦" or "★") particles */
+.op-trail-sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99997;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  line-height: 1;
+  color: #fbbf24;
+  text-shadow: 0 0 8px #f59e0b, 0 0 14px #ef4444;
+  animation: op-sparkle-fade 0.55s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes op-sparkle-fade {
+  0% {
+    transform: translate(var(--tx, 0), var(--ty, 0)) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(var(--tx, 0) + var(--drift-x, 0px)), calc(var(--ty, 0) - 20px)) scale(0.3) rotate(90deg);
+    opacity: 0;
+  }
+}
+
+/* Conqueror's Haki Shockwave on Click */
+.op-haki-shockwave {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  border: 2.5px solid #ef4444;
+  box-shadow: 0 0 28px #ef4444, inset 0 0 16px #f59e0b;
+  transform: translate(-50%, -50%) scale(0.15);
+  animation: haki-shockwave-burst 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+@keyframes haki-shockwave-burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0.15);
+    opacity: 1;
+    border-color: #ef4444;
+  }
+  60% {
+    border-color: #fbbf24;
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.6);
+    opacity: 0;
+    border-color: #ef4444;
+  }
+}
+
+

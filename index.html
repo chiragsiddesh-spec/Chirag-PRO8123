@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chirag Siddesh // Computer Science Portfolio</title>
+  <meta name="description" content="Portfolio of Chirag Siddesh — 3rd Semester Computer Science Student & Software Developer. Specializing in Java, C++, Python, and modern web systems.">
+  <meta name="keywords" content="Chirag Siddesh, Computer Science, Software Developer, Java, Python, C++, Web Development, Portfolio">
+  <meta name="author" content="Chirag Siddesh">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Chirag Siddesh // Computer Science Portfolio">
+  <meta property="og:description" content="Student // Developer // Creator — Exploring systems, algorithms, and sleek software engineering.">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Floating Atmosphere Canvas & Effects -->
+  <canvas id="particles-canvas"></canvas>
+  <div class="speedlines-overlay" aria-hidden="true"></div>
+
+  <!-- Mobile Top Bar (Visible only on smaller screens) -->
+  <div class="mobile-top-bar" id="mobile-top-bar">
+    <a href="#hero" class="brand-badge">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-title" style="font-size: 0.95rem;">CHIRAG SIDDESH</span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <button type="button" class="btn-theme-toggle" id="mobile-theme-toggle-btn" aria-label="Toggle Night/Day Mode">
+        <span id="mobile-nav-theme-icon">🌙</span>
+      </button>
+      <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Sidebar Navigation">
+        ☰
+      </button>
+    </div>
+  </div>
+
+  <!-- Sidebar Backdrop Overlay for Mobile -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       VERTICAL NAVIGATION BAR (LEFT SIDE OF THE SCREEN)
+       ========================================================================== -->
+  <aside class="vertical-sidebar" id="vertical-sidebar" aria-label="Site Navigation">
+    
+    <!-- Top Branding & Status Section -->
+    <div class="sidebar-top">
+      <a href="#hero" class="brand-badge sidebar-brand-badge" id="brand-home-link" aria-label="Chirag Siddesh Home">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <div class="brand-callsign">
+          <span class="brand-title">CHIRAG SIDDESH</span>
+          <span class="brand-kanji">開発者 // CS PROFILE</span>
+        </div>
+      </a>
+
+      <!-- Status Pill -->
+      <div class="nav-status-pill" id="nav-status-indicator">
+        <span>●</span> SYSTEM ONLINE // CS_03
+      </div>
+    </div>
+
+    <!-- Vertical Navigation Links (Middle Section) -->
+    <nav class="sidebar-nav" aria-label="Main Navigation">
+      <ul class="vertical-nav-links">
+        <li>
+          <a href="#about" class="vertical-nav-link" id="nav-about">
+            <div class="vertical-nav-link-left">
+              <span class="vertical-nav-link-num">01</span>
+              <span>ABOUT</span>
+            </div>
+            <span class="vertical-nav-link-arrow" aria-hidden="true">▸</span>
+          </a>
+        </li>
+        <li>
+          <a href="#projects" class="vertical-nav-link" id="nav-projects">
+            <div class="vertical-nav-link-left">
+              <span class="vertical-nav-link-num">02</span>
+              <span>PROJECTS</span>
+            </div>
+            <span class="vertical-nav-link-arrow" aria-hidden="true">▸</span>
+          </a>
+        </li>
+        <li>
+          <a href="#skills" class="vertical-nav-link" id="nav-skills">
+            <div class="vertical-nav-link-left">
+              <span class="vertical-nav-link-num">03</span>
+              <span>SKILLS</span>
+            </div>
+            <span class="vertical-nav-link-arrow" aria-hidden="true">▸</span>
+          </a>
+        </li>
+        <li>
+          <a href="#quests" class="vertical-nav-link" id="nav-quests">
+            <div class="vertical-nav-link-left">
+              <span class="vertical-nav-link-num">04</span>
+              <span>QUESTS</span>
+            </div>
+            <span class="vertical-nav-link-arrow" aria-hidden="true">▸</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="vertical-nav-link" id="nav-contact">
+            <div class="vertical-nav-link-left">
+              <span class="vertical-nav-link-num">05</span>
+              <span>CONTACT</span>
+            </div>
+            <span class="vertical-nav-link-arrow" aria-hidden="true">▸</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Bottom Controls & CTA Section -->
+    <div class="sidebar-bottom-actions">
+      <div class="sidebar-controls-row">
+        <button type="button" class="btn-theme-toggle" id="theme-toggle-btn" aria-label="Toggle Night or Day Mode" title="Toggle Theme (Auto-detects browser theme)">
+          <span id="nav-theme-icon">🌙</span> <span id="nav-theme-text">NIGHT</span>
+        </button>
+        <button type="button" class="btn-hud-sound" id="sound-toggle-btn" aria-label="Toggle UI Audio Effects" title="Toggle UI Sound Synthesizer">
+          🔇
+        </button>
+      </div>
+
+      <a href="#contact" class="btn-manga-primary sidebar-cta-btn" id="nav-cta-btn">
+        <span>CONNECT</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION — PIXEL ART STYLE WITH CUSTOM BACKGROUND IMAGE
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="pixel-crt-scanlines" aria-hidden="true"></div>
+      <div class="hero-backdrop-glow" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        
+        <!-- Left Hero Content (Pixel Art Design) -->
+        <div class="hero-content-col">
+          
+          <!-- Pixel Art Welcome Badge -->
+          <div class="pixel-badge">
+            <span class="pixel-blink" aria-hidden="true">▶</span>
+            <span>PLAYER 1 READY // LEVEL 03</span>
+            <span class="pixel-badge-sub">CS UNDERGRAD</span>
+          </div>
+
+          <!-- Hero Heading with Welcoming Title -->
+          <h1 class="hero-heading pixel-hero-heading">
+            <span class="hero-greeting pixel-greeting">WELCOME, VISITOR!</span>
+            <span class="hero-name-wrapper pixel-name-wrapper">
+              CHIRAG SIDDESH.
+              <span class="hero-name-underline pixel-underline" aria-hidden="true"></span>
+            </span>
+          </h1>
+
+          <!-- Welcoming Brief Tagline -->
+          <p class="hero-description pixel-tagline">
+            “3rd Semester Computer Science Student &amp; Software Developer — Crafting high-performance systems, intuitive web tools, and algorithmic solutions with pixel-perfect precision.”
+          </p>
+
+          <!-- Retro RPG Stats HUD Bar -->
+          <div class="pixel-stats-hud">
+            <div class="pixel-stat-chip">
+              <span class="pixel-stat-icon">❤️</span>
+              <span class="pixel-stat-name">HP</span>
+              <div class="pixel-stat-bar"><div class="pixel-stat-fill hp"></div></div>
+              <span class="pixel-stat-num">100/100</span>
+            </div>
+            <div class="pixel-stat-chip">
+              <span class="pixel-stat-icon">⚡</span>
+              <span class="pixel-stat-name">MP</span>
+              <div class="pixel-stat-bar"><div class="pixel-stat-fill mp"></div></div>
+              <span class="pixel-stat-num">99/99</span>
+            </div>
+            <div class="pixel-stat-chip">
+              <span class="pixel-stat-icon">🗡️</span>
+              <span class="pixel-stat-name">CLASS</span>
+              <span class="pixel-stat-val">CS_ENGINEER</span>
+            </div>
+            <div class="pixel-stat-chip">
+              <span class="pixel-stat-icon">🌟</span>
+              <span class="pixel-stat-name">QUEST</span>
+              <span class="pixel-stat-val">BUILD. LEARN. IMPROVE.</span>
+            </div>
+          </div>
+
+          <!-- Pixel Call to Actions & Night Mode Toggle -->
+          <div class="hero-cta-group pixel-cta-group">
+            <a href="#projects" class="btn-pixel-primary" id="hero-btn-projects">
+              <span>▶ START: PROJECTS</span>
+            </a>
+            <a href="#quests" class="btn-pixel-secondary" id="hero-btn-quests">
+              <span>SELECT QUEST LOG</span>
+            </a>
+            <button type="button" class="btn-pixel-mode" id="hero-theme-toggle" title="Toggle Theme (Auto-detects browser theme)">
+              <span id="hero-theme-icon">🌙</span> <span id="hero-theme-label">NIGHT MODE</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Media Dossier (Photo Treatment with Orange Rim Light & Anime Accents) -->
+        <div class="hero-media-wrapper">
+          
+          <div class="hero-frame-container manga-panel">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <span class="corner-accent tr" aria-hidden="true"></span>
+            <span class="corner-accent bl" aria-hidden="true"></span>
+            <span class="corner-accent br" aria-hidden="true"></span>
+
+            <!-- Frame HUD Header -->
+            <div class="frame-hud-header">
+              <div class="hud-callsign">
+                <span class="hud-status-live" aria-hidden="true"></span>
+                <span id="hud-sensor-type">MODE: VERIFIED PHOTO</span>
+              </div>
+              <span class="dossier-id-tag">ID // CS-2026</span>
+            </div>
+
+            <!-- Photo Display Viewport -->
+            <div class="photo-display-viewport">
+              <img 
+                src="assets/chirag_photo.jpeg" 
+                alt="Chirag Siddesh - Computer Science Student" 
+                id="hero-profile-image" 
+                class="photo-img"
+              >
+              <!-- Anime Style Visual Overlays: Rim Lighting & Grid Lines -->
+              <div class="photo-rim-lighting" aria-hidden="true"></div>
+              <div class="photo-scan-grid" aria-hidden="true"></div>
+            </div>
+
+            <!-- Frame HUD Footer with Avatar Persona Mode Switcher -->
+            <div class="frame-hud-footer">
+              <div class="avatar-mode-switch">
+                <span class="switch-label">VISUAL PROFILE:</span>
+                <div class="switch-options">
+                  <button type="button" class="switch-btn active" id="switch-real-btn">
+                    REAL PHOTO
+                  </button>
+                  <button type="button" class="switch-btn" id="switch-avatar-btn">
+                    ANIME AVATAR
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Digital Companion Persona Badge -->
+          <div class="persona-companion-badge">
+            <div class="companion-icon-box" aria-hidden="true">⚡</div>
+            <div class="companion-text-col">
+              <span class="companion-title">DIGITAL PERSONA // CODING COMPANION</span>
+              <span class="companion-sub">Original avatar model ready • Click switch above</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT SECTION — CHARACTER PROFILE // 01
+         ========================================================================== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        
+        <div class="section-header-block">
+          <div class="section-tag-row">
+            <span class="section-tag">CHARACTER PROFILE // 01</span>
+            <span class="section-kanji">「人物紹介 // コードの背後」</span>
+            <span class="section-line" aria-hidden="true"></span>
+          </div>
+          <h2 class="section-title">THE PERSON BEHIND THE CODE</h2>
+          <p class="section-subtitle">Bridging theoretical computer science principles with practical software engineering.</p>
+        </div>
+
+        <div class="character-card-grid">
+          
+          <!-- Character Dossier Card -->
+          <article class="character-dossier manga-panel">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <span class="corner-accent tr" aria-hidden="true"></span>
+            <span class="corner-accent bl" aria-hidden="true"></span>
+            <span class="corner-accent br" aria-hidden="true"></span>
+
+            <div class="dossier-header">
+              <span class="dossier-id">DOSSIER // CS-FILE-01</span>
+              <span class="dossier-class">「識別カード」</span>
+            </div>
+
+            <div class="dossier-fields">
+              
+              <div class="dossier-field">
+                <span class="field-label">NAME</span>
+                <span class="field-value">Chirag Siddesh</span>
+              </div>
+
+              <div class="dossier-field">
+                <span class="field-label">ROLE</span>
+                <span class="field-value">Computer Science Student</span>
+              </div>
+
+              <div class="dossier-field">
+                <span class="field-label">STATUS</span>
+                <span class="field-value highlight">3rd Semester Undergraduate</span>
+              </div>
+
+              <div class="dossier-field">
+                <span class="field-label">INTERESTS</span>
+                <div class="interests-tag-cloud">
+                  <span class="interest-pill">Programming</span>
+                  <span class="interest-pill">Software Development</span>
+                  <span class="interest-pill">Web Development</span>
+                  <span class="interest-pill">Problem Solving</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="quest-quote-box">
+              <div class="quest-quote-label">CURRENT QUEST</div>
+              <div class="quest-quote-val">"Build. Learn. Improve."</div>
+            </div>
+
+          </article>
+
+          <!-- Narrative Profile & Attributes -->
+          <div class="about-narrative">
+            <p class="story-lead-text">
+              I am an aspiring software engineer obsessed with <span>how systems operate from the algorithmic core to the user interface</span>.
+            </p>
+
+            <p class="story-paragraph">
+              Currently progressing through my 3rd semester in Computer Science & Engineering, I focus my technical time on building clean applications, mastering fundamental data structures, and developing robust software. Whether untangling complex object-oriented structures in Java, optimizing runtime paths in C++, or crafting responsive interfaces on the web, I bring discipline and methodical execution to every codebase.
+            </p>
+
+            <p class="story-paragraph">
+              My engineering philosophy revolves around building authentic tools that solve tangible problems — not just writing tutorial code, but architecting practical systems with scalable schemas and intuitive interactions.
+            </p>
+
+            <!-- Attributes Matrix -->
+            <div class="attributes-grid">
+              
+              <div class="attribute-card manga-panel">
+                <span class="corner-accent tl" aria-hidden="true"></span>
+                <div class="attribute-top">
+                  <span class="attribute-name">Logic & Problem Solving</span>
+                  <span class="attribute-badge">CORE</span>
+                </div>
+                <p class="attribute-desc">Breaking down complex specifications into deterministic, optimized algorithms and edge-case resilient flows.</p>
+              </div>
+
+              <div class="attribute-card manga-panel">
+                <span class="corner-accent tl" aria-hidden="true"></span>
+                <div class="attribute-top">
+                  <span class="attribute-name">Clean Architecture</span>
+                  <span class="attribute-badge">PRINCIPLE</span>
+                </div>
+                <p class="attribute-desc">Writing readable, modular, and maintainable object-oriented code following proven design patterns.</p>
+              </div>
+
+              <div class="attribute-card manga-panel">
+                <span class="corner-accent tl" aria-hidden="true"></span>
+                <div class="attribute-top">
+                  <span class="attribute-name">Continuous Momentum</span>
+                  <span class="attribute-badge">MINDSET</span>
+                </div>
+                <p class="attribute-desc">Iterative skill acquisition through hands-on projects, rigorous debugging, and active learning cycles.</p>
+              </div>
+
+              <div class="attribute-card manga-panel">
+                <span class="corner-accent tl" aria-hidden="true"></span>
+                <div class="attribute-top">
+                  <span class="attribute-name">Practical Systems</span>
+                  <span class="attribute-badge">MISSION</span>
+                </div>
+                <p class="attribute-desc">Building software designed for authentic campus environments and real users rather than isolated theoretical exercises.</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECTS SECTION — MANGA PANELS ARCHIVE
+         ========================================================================== */
+    -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        
+        <div class="section-header-block">
+          <div class="section-tag-row">
+            <span class="section-tag">PROJECT ARCHIVE // MANGA PANELS</span>
+            <span class="section-kanji">「プロジェクト記録」</span>
+            <span class="section-line" aria-hidden="true"></span>
+          </div>
+          <h2 class="section-title">CASE FILES & BUILDS</h2>
+          <p class="section-subtitle">Engineered solutions presented as interactive manga case files. Hover to inspect parameters.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="projects-filter-bar">
+          <button type="button" class="filter-btn active" data-filter="all">ALL CASE FILES</button>
+          <button type="button" class="filter-btn" data-filter="campus">CAMPUS SYSTEMS</button>
+          <button type="button" class="filter-btn" data-filter="algo">ALGORITHMS</button>
+          <button type="button" class="filter-btn" data-filter="hardware">IOT & TELEMETRY</button>
+        </div>
+
+        <!-- Manga Panels Grid -->
+        <div class="projects-grid">
+          
+          <!-- Case File 01: COLLEGE LOST & FOUND (Specified in prompt) -->
+          <article class="project-panel-card manga-panel" data-category="campus" id="card-lost-found">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <span class="corner-accent tr" aria-hidden="true"></span>
+            <span class="corner-accent bl" aria-hidden="true"></span>
+            <span class="corner-accent br" aria-hidden="true"></span>
+            <div class="manga-speedline-fx" aria-hidden="true"></div>
+
+            <!-- Top Panel Meta -->
+            <div class="panel-top-meta">
+              <span class="panel-case-num">01 // CASE FILE</span>
+              <span class="panel-case-tag">CAMPUS SYSTEM</span>
+            </div>
+
+            <!-- Image Viewport -->
+            <div class="panel-image-box">
+              <img src="assets/proj_lost_found.jpg" alt="College Lost and Found Campus System UI" class="panel-thumb" loading="lazy">
+              <div class="panel-image-overlay" aria-hidden="true"></div>
+              <div class="panel-view-action-banner">VIEW PROJECT →</div>
+            </div>
+
+            <!-- Panel Body -->
+            <div class="panel-body">
+              <h3 class="panel-title">COLLEGE LOST &amp; FOUND</h3>
+              <p class="panel-desc">
+                A centralized digital campus platform connecting students and staff to log, track, verify, and reclaim misplaced belongings with categoric search and campus location mapping.
+              </p>
+
+              <div class="panel-tech-tags">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Web Tech</span>
+                <span class="tech-tag">SQLite</span>
+              </div>
+
+              <div class="panel-footer-actions">
+                <a href="#" class="panel-btn-link" data-open-case="lost-found">
+                  <span>INSPECT FILE</span>
+                  <span aria-hidden="true">▸</span>
+                </a>
+                <a href="https://github.com/chiragsiddesh-spec" target="_blank" rel="noopener noreferrer" class="panel-btn-github">
+                  <span>GITHUB</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case File 02: ALGO-VISUALIZER // PATHFINDING ENGINE -->
+          <article class="project-panel-card manga-panel" data-category="algo" id="card-algo-visualizer">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <span class="corner-accent tr" aria-hidden="true"></span>
+            <span class="corner-accent bl" aria-hidden="true"></span>
+            <span class="corner-accent br" aria-hidden="true"></span>
+            <div class="manga-speedline-fx" aria-hidden="true"></div>
+
+            <!-- Top Panel Meta -->
+            <div class="panel-top-meta">
+              <span class="panel-case-num">02 // CASE FILE</span>
+              <span class="panel-case-tag">ALGORITHMIC SIMULATION</span>
+            </div>
+
+            <!-- Image Viewport -->
+            <div class="panel-image-box">
+              <img src="assets/proj_algo_visual.jpg" alt="Algorithm Pathfinding Engine Network" class="panel-thumb" loading="lazy">
+              <div class="panel-image-overlay" aria-hidden="true"></div>
+              <div class="panel-view-action-banner">VIEW PROJECT →</div>
+            </div>
+
+            <!-- Panel Body -->
+            <div class="panel-body">
+              <h3 class="panel-title">ALGO-VISUALIZER // PATHFINDING</h3>
+              <p class="panel-desc">
+                Interactive real-time graph search simulator demonstrating A* Pathfinding and Dijkstra algorithms on dynamic obstacle grids with frontier visualization and cost analysis.
+              </p>
+
+              <div class="panel-tech-tags">
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Data Structures</span>
+                <span class="tech-tag">Graph Theory</span>
+              </div>
+
+              <div class="panel-footer-actions">
+                <a href="#" class="panel-btn-link" data-open-case="algo-visual">
+                  <span>INSPECT FILE</span>
+                  <span aria-hidden="true">▸</span>
+                </a>
+                <a href="https://github.com/chiragsiddesh-spec" target="_blank" rel="noopener noreferrer" class="panel-btn-github">
+                  <span>GITHUB</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case File 03: SMART WASTE MONITOR // IOT & DASHBOARD -->
+          <article class="project-panel-card manga-panel" data-category="hardware" id="card-iot-telemetry">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <span class="corner-accent tr" aria-hidden="true"></span>
+            <span class="corner-accent bl" aria-hidden="true"></span>
+            <span class="corner-accent br" aria-hidden="true"></span>
+            <div class="manga-speedline-fx" aria-hidden="true"></div>
+
+            <!-- Top Panel Meta -->
+            <div class="panel-top-meta">
+              <span class="panel-case-num">03 // CASE FILE</span>
+              <span class="panel-case-tag">HARDWARE &amp; CLOUD</span>
+            </div>
+
+            <!-- Image Viewport -->
+            <div class="panel-image-box">
+              <img src="assets/proj_iot_telemetry.jpg" alt="IoT Smart Waste Telemetry Console" class="panel-thumb" loading="lazy">
+              <div class="panel-image-overlay" aria-hidden="true"></div>
+              <div class="panel-view-action-banner">VIEW PROJECT →</div>
+            </div>
+
+            <!-- Panel Body -->
+            <div class="panel-body">
+              <h3 class="panel-title">SMART WASTE MONITOR // IOT</h3>
+              <p class="panel-desc">
+                Intelligent campus hardware telemetry system interfacing ultrasonic sensors with a real-time web console to track container fill levels and automate waste management logistics.
+              </p>
+
+              <div class="panel-tech-tags">
+                <span class="tech-tag">IoT / Sensors</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Web Console</span>
+                <span class="tech-tag">Telemetry</span>
+              </div>
+
+              <div class="panel-footer-actions">
+                <a href="#" class="panel-btn-link" data-open-case="iot-telemetry">
+                  <span>INSPECT FILE</span>
+                  <span aria-hidden="true">▸</span>
+                </a>
+                <a href="https://github.com/chiragsiddesh-spec" target="_blank" rel="noopener noreferrer" class="panel-btn-github">
+                  <span>GITHUB</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS SECTION — POWER SYSTEM STYLE (NO FAKE PERCENTAGES)
+         ========================================================================== -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        
+        <div class="section-header-block">
+          <div class="section-tag-row">
+            <span class="section-tag">ABILITY MATRIX // POWER SYSTEM</span>
+            <span class="section-kanji">「能力マトリックス」</span>
+            <span class="section-line" aria-hidden="true"></span>
+          </div>
+          <h2 class="section-title">SKILL SET</h2>
+          <p class="section-subtitle">Categorized competencies evaluated through authentic descriptive mastery milestones.</p>
+        </div>
+
+        <div class="skills-layout-grid">
+          
+          <!-- Category 1: Systems & Programming Languages -->
+          <div class="skill-category-box manga-panel">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <div class="skill-category-header">
+              <div class="skill-cat-title">
+                <span class="skill-cat-icon">☕</span>
+                <span>CORE LANGUAGES</span>
+              </div>
+              <span class="skill-cat-badge">TIER: PRIMARY</span>
+            </div>
+
+            <div class="skills-list">
+              
+              <!-- JAVA -->
+              <div class="skill-item-card">
+                <div class="skill-item-header">
+                  <span class="skill-name">JAVA</span>
+                  <span class="mastery-level-pill building">Building</span>
+                </div>
+                <div class="skill-subtext">Programming // OOP Architecture</div>
+                <p class="skill-desc">Class hierarchies, polymorphism, interfaces, exception handling, and standard collections framework.</p>
+              </div>
+
+              <!-- C++ -->
+              <div class="skill-item-card">
+                <div class="skill-item-header">
+                  <span class="skill-name">C++</span>
+                  <span class="mastery-level-pill practicing">Practicing</span>
+                </div>
+                <div class="skill-subtext">Programming // Problem Solving</div>
+                <p class="skill-desc">Memory management, pointers, STL containers (vectors, maps), and algorithmic execution speed.</p>
+              </div>
+
+              <!-- PYTHON -->
+              <div class="skill-item-card">
+                <div class="skill-item-header">
+                  <span class="skill-name">PYTHON</span>
+                  <span class="mastery-level-pill building">Building</span>
+                </div>
+                <div class="skill-subtext">Programming // Automation</div>
+                <p class="skill-desc">Scripting, automated data pipelines, rapid prototyping, and standard utility development.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Category 2: Web Engineering & Interfaces -->
+          <div class="skill-category-box manga-panel">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <div class="skill-category-header">
+              <div class="skill-cat-title">
+                <span class="skill-cat-icon">🌐</span>
+                <span>WEB DEVELOPMENT</span>
+              </div>
+              <span class="skill-cat-badge">TIER: APPLICATION</span>
+            </div>
+
+            <div class="skills-list">
+              
+              <!-- HTML + CSS -->
+              <div class="skill-item-card">
+                <div class="skill-item-header">
+                  <span class="skill-name">HTML + CSS</span>
+                  <span class="mastery-level-pill building">Building</span>
+                </div>
+                <div class="skill-subtext">Web Development // Layouts</div>
+                <p class="skill-desc">Semantic HTML5 structures, modern responsive CSS Grid and Flexbox, bespoke dark themes, and CSS animations.</p>
+              </div>
+
+              <!-- JAVASCRIPT -->
+              <div class="skill-item-card">
+                <div class="skill-item-header">
+                  <span class="skill-name">JAVASCRIPT</span>
+                  <span class="mastery-level-pill practicing">Practicing</span>
+                </div>
+                <div class="skill-subtext">Web Development // Logic</div>
+                <p class="skill-desc">DOM event orchestration, asynchronous Fetch API queries, state handling, and modular ES6+ functions.</p>
+              </div>
+
+              <!-- RESPONSIVE UI -->
+              <div class="skill-item-card">
+                <div class="skill-item-header">
+                  <span class="skill-name">MODERN UI / UX</span>
+                  <span class="mastery-level-pill improving">Improving</span>
+                </div>
+                <div class="skill-subtext">Interface Design // Aesthetics</div>
+                <p class="skill-desc">Accessible layouts, subtle micro-animations, glassmorphic styling, and user-centric navigation hierarchies.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Category 3: Tools & Theoretical Foundations -->
+          <div class="skill-category-box manga-panel">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <div class="skill-category-header">
+              <div class="skill-cat-title">
+                <span class="skill-cat-icon">⚙️</span>
+                <span>SYSTEMS &amp; TOOLS</span>
+              </div>
+              <span class="skill-cat-badge">TIER: FOUNDATIONAL</span>
+            </div>
+
+            <div class="skills-list">
+              
+              <!-- GIT + GITHUB -->
+              <div class="skill-item-card">
+                <div class="skill-item-header">
+                  <span class="skill-name">GIT + GITHUB</span>
+                  <span class="mastery-level-pill practicing">Practicing</span>
+                </div>
+                <div class="skill-subtext">Version Control // Collaboration</div>
+                <p class="skill-desc">Atomic commits, branch isolation, merge workflows, GitHub repositories, and open source hygiene.</p>
+              </div>
+
+              <!-- DATA STRUCTURES -->
+              <div class="skill-item-card">
+                <div class="skill-item-header">
+                  <span class="skill-name">DATA STRUCTURES</span>
+                  <span class="mastery-level-pill learning">Learning</span>
+                </div>
+                <div class="skill-subtext">Computer Science // Fundamentals</div>
+                <p class="skill-desc">Arrays, Linked Lists, Stacks, Queues, Binary Trees, graph representations, and Big-O asymptotic analysis.</p>
+              </div>
+
+              <!-- SQL & DATABASES -->
+              <div class="skill-item-card">
+                <div class="skill-item-header">
+                  <span class="skill-name">SQL &amp; DATABASES</span>
+                  <span class="mastery-level-pill practicing">Practicing</span>
+                </div>
+                <div class="skill-subtext">Data Persistence // Modeling</div>
+                <p class="skill-desc">Relational entity modeling, table schemas, primary/foreign constraints, and multi-table JOIN queries.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CURRENT QUEST SECTION — ANIME RPG QUEST LOG
+         ========================================================================== -->
+    <section class="quest-section" id="quests">
+      <div class="container">
+        
+        <div class="section-header-block">
+          <div class="section-tag-row">
+            <span class="section-tag">MISSION TERMINAL // QUEST LOG</span>
+            <span class="section-kanji">「現在のクエスト」</span>
+            <span class="section-line" aria-hidden="true"></span>
+          </div>
+          <h2 class="section-title">CURRENT QUEST</h2>
+          <p class="section-subtitle">Things I'm working towards. Measurable growth milestones in my computer science journey.</p>
+        </div>
+
+        <div class="quest-board-grid">
+          
+          <!-- Quest 01 -->
+          <article class="quest-card manga-panel featured">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <span class="corner-accent tr" aria-hidden="true"></span>
+            <div class="quest-header">
+              <span class="quest-index">QUEST // 01</span>
+              <span class="quest-type-tag">MAIN QUEST</span>
+            </div>
+            <h3 class="quest-title">Master Data Structures</h3>
+            <p class="quest-details">
+              Deep dive into Trees, Binary Search Trees, Graphs, Heaps, and Dynamic Programming. Solving core algorithm problems with optimal time &amp; space complexity.
+            </p>
+            <div class="quest-meta-box">
+              <div class="quest-target-row">
+                <span class="quest-target-label">OBJECTIVE</span>
+                <span class="quest-status-badge">IN PROGRESS</span>
+              </div>
+              <div class="quest-reward-text">EXP REWARD: Algorithmic intuition &amp; problem-solving speed</div>
+            </div>
+          </article>
+
+          <!-- Quest 02 -->
+          <article class="quest-card manga-panel featured">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <span class="corner-accent tr" aria-hidden="true"></span>
+            <div class="quest-header">
+              <span class="quest-index">QUEST // 02</span>
+              <span class="quest-type-tag">MAIN QUEST</span>
+            </div>
+            <h3 class="quest-title">Build Better Projects</h3>
+            <p class="quest-details">
+              Moving beyond single-script utilities into end-to-end full systems with authenticated access, robust relational schemas, and tested deployment architectures.
+            </p>
+            <div class="quest-meta-box">
+              <div class="quest-target-row">
+                <span class="quest-target-label">OBJECTIVE</span>
+                <span class="quest-status-badge">IN PROGRESS</span>
+              </div>
+              <div class="quest-reward-text">EXP REWARD: Production-ready codebase portfolio</div>
+            </div>
+          </article>
+
+          <!-- Quest 03 -->
+          <article class="quest-card manga-panel">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <span class="corner-accent tr" aria-hidden="true"></span>
+            <div class="quest-header">
+              <span class="quest-index">QUEST // 03</span>
+              <span class="quest-type-tag">SKILL QUEST</span>
+            </div>
+            <h3 class="quest-title">Improve Java</h3>
+            <p class="quest-details">
+              Exploring advanced concurrency, multi-threading, JVM memory internals, unit testing with JUnit, and stepping into backend frameworks like Spring Boot.
+            </p>
+            <div class="quest-meta-box">
+              <div class="quest-target-row">
+                <span class="quest-target-label">OBJECTIVE</span>
+                <span class="quest-status-badge">IN PROGRESS</span>
+              </div>
+              <div class="quest-reward-text">EXP REWARD: Enterprise backend engineering capability</div>
+            </div>
+          </article>
+
+          <!-- Quest 04 -->
+          <article class="quest-card manga-panel">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <span class="corner-accent tr" aria-hidden="true"></span>
+            <div class="quest-header">
+              <span class="quest-index">QUEST // 04</span>
+              <span class="quest-type-tag">EXPANSION QUEST</span>
+            </div>
+            <h3 class="quest-title">Learn Full-Stack Development</h3>
+            <p class="quest-details">
+              Connecting intuitive client-side interfaces with robust RESTful server APIs, secure JWT authorization, and resilient database persistence layers.
+            </p>
+            <div class="quest-meta-box">
+              <div class="quest-target-row">
+                <span class="quest-target-label">OBJECTIVE</span>
+                <span class="quest-status-badge">IN PROGRESS</span>
+              </div>
+              <div class="quest-reward-text">EXP REWARD: Full-stack product delivery skills</div>
+            </div>
+          </article>
+
+          <!-- Quest 05 -->
+          <article class="quest-card manga-panel" style="grid-column: 1 / -1;">
+            <span class="corner-accent tl" aria-hidden="true"></span>
+            <span class="corner-accent tr" aria-hidden="true"></span>
+            <div class="quest-header">
+              <span class="quest-index">QUEST // 05</span>
+              <span class="quest-type-tag">CAREER MILESTONE</span>
+            </div>
+            <h3 class="quest-title">Prepare for Internships</h3>
+            <p class="quest-details">
+              Sharpening technical communication, behavioral interviewing, collaborative Git etiquette, open-source pull requests, and building software that delivers value to real teams.
+            </p>
+            <div class="quest-meta-box">
+              <div class="quest-target-row">
+                <span class="quest-target-label">OBJECTIVE</span>
+                <span class="quest-status-badge">ACTIVE TARGET</span>
+              </div>
+              <div class="quest-reward-text">EXP REWARD: Software Engineering Internship Opportunity</div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION — FINAL SCENE
+         ========================================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="final-scene-horizon-glow" aria-hidden="true"></div>
+
+      <div class="container contact-layout-grid">
+        
+        <!-- Left Narrative Column -->
+        <div class="contact-narrative-col">
+          
+          <div class="section-tag-row">
+            <span class="section-tag">FINAL SCENE // TRANSMISSION LINK</span>
+            <span class="section-kanji">「最終章 // コンタクト」</span>
+            <span class="section-line" aria-hidden="true"></span>
+          </div>
+
+          <h2 class="contact-lead-heading">THE NEXT CHAPTER STARTS HERE.</h2>
+
+          <p class="contact-lead-sub">
+            Whether it's a project, internship opportunity, collaboration, or simply connecting — let's talk.
+          </p>
+
+          <div class="contact-quick-links">
+            
+            <a href="mailto:cchiragsiddesh@gmail.com" class="contact-link-card manga-panel" id="copy-email-btn" title="Click to copy email">
+              <div class="contact-link-info">
+                <div class="contact-link-icon" aria-hidden="true">✉</div>
+                <div>
+                  <div class="contact-link-label">DIRECT EMAIL</div>
+                  <div class="contact-link-val">cchiragsiddesh@gmail.com</div>
+                </div>
+              </div>
+              <span class="contact-arrow-icon">COPY 📋</span>
+            </a>
+
+            <a href="https://github.com/chiragsiddesh-spec" target="_blank" rel="noopener noreferrer" class="contact-link-card manga-panel" id="contact-github-link">
+              <div class="contact-link-info">
+                <div class="contact-link-icon" aria-hidden="true">🐙</div>
+                <div>
+                  <div class="contact-link-label">GITHUB</div>
+                  <div class="contact-link-val">github.com/chiragsiddesh-spec</div>
+                </div>
+              </div>
+              <span class="contact-arrow-icon">VISIT ↗</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/chirag-siddesh-614b37397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="contact-link-card manga-panel" id="contact-linkedin-link">
+              <div class="contact-link-info">
+                <div class="contact-link-icon" aria-hidden="true">💼</div>
+                <div>
+                  <div class="contact-link-label">LINKEDIN</div>
+                  <div class="contact-link-val">linkedin.com/in/chirag-siddesh</div>
+                </div>
+              </div>
+              <span class="contact-arrow-icon">CONNECT ↗</span>
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- Right Message Transmission Form -->
+        <div class="contact-form-panel manga-panel">
+          <span class="corner-accent tl" aria-hidden="true"></span>
+          <span class="corner-accent tr" aria-hidden="true"></span>
+          <span class="corner-accent bl" aria-hidden="true"></span>
+          <span class="corner-accent br" aria-hidden="true"></span>
+
+          <div class="form-header-row">
+            <span class="form-header-title">SEND A MESSAGE</span>
+            <span class="dossier-id-tag">DISPATCH TERMINAL</span>
+          </div>
+
+          <form id="portfolio-contact-form" action="mailto:cchiragsiddesh@gmail.com" method="POST" enctype="text/plain">
+            
+            <div class="form-group">
+              <label for="contact-name" class="form-label">YOUR NAME // CALLSIGN</label>
+              <input type="text" id="contact-name" class="form-control" placeholder="e.g. Alex Morgan (Recruiter / Lead)" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">YOUR EMAIL ADDRESS</label>
+              <input type="email" id="contact-email" class="form-control" placeholder="e.g. alex@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">SUBJECT // OPPORTUNITY</label>
+              <input type="text" id="contact-subject" class="form-control" placeholder="e.g. Internship Inquiry / Software Project" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">TRANSMISSION MESSAGE</label>
+              <textarea id="contact-message" class="form-control" placeholder="Describe the project, role, or conversation you would like to initiate..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-manga-primary form-submit-btn" id="send-message-btn">
+              <span>SEND A MESSAGE</span>
+              <span aria-hidden="true">▸</span>
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-copy">© 2026 <span>CHIRAG SIDDESH</span>. All Rights Reserved.</p>
+        <p class="footer-quote">「コードは未来を形作る」 // Crafted with precision and clean architecture.</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/chiragsiddesh-spec" target="_blank" rel="noopener noreferrer" class="footer-social-link">GITHUB</a>
+        <a href="https://www.linkedin.com/in/chirag-siddesh-614b37397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="footer-social-link">LINKEDIN</a>
+        <a href="mailto:cchiragsiddesh@gmail.com" class="footer-social-link">EMAIL</a>
+        <button type="button" class="footer-social-link" id="trigger-system-online" title="Trigger System Online HUD">
+          [ ⚡ SYSTEM ]
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       PROJECT DOSSIER MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="project-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-case-title">
+    <div class="modal-content-dossier manga-panel">
+      <span class="corner-accent tl" aria-hidden="true"></span>
+      <span class="corner-accent tr" aria-hidden="true"></span>
+      <span class="corner-accent bl" aria-hidden="true"></span>
+      <span class="corner-accent br" aria-hidden="true"></span>
+
+      <div class="modal-top-bar">
+        <div>
+          <div class="dossier-id-tag" id="modal-case-subtitle">CASE FILE // DETAIL DOSSIER</div>
+          <h3 id="modal-case-title" style="font-family: var(--font-heading); font-size: 1.3rem; color: #fff;">CASE FILE</h3>
+        </div>
+        <button type="button" class="modal-close-icon" id="modal-close-btn" aria-label="Close Case File">✕</button>
+      </div>
+
+      <div class="modal-inner-body">
+        <img src="" alt="Project Case File Preview" id="modal-case-image" class="modal-preview-img">
+        <p id="modal-case-desc" style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 16px;"></p>
+        
+        <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--orange-primary); letter-spacing: 0.08em; text-transform: uppercase;">ENGINEERING HIGHLIGHTS &amp; ARCHITECTURE</h4>
+        <ul id="modal-case-specs" class="modal-spec-list"></ul>
+
+        <div style="margin-top: 20px;">
+          <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">TECHNOLOGY MATRIX</h4>
+          <div id="modal-case-stack" class="panel-tech-tags"></div>
+        </div>
+
+        <div style="margin-top: 24px; display: flex; gap: 12px;">
+          <a href="https://github.com/chiragsiddesh-spec" target="_blank" rel="noopener noreferrer" class="btn-manga-primary" id="modal-github-link">
+            <span>EXPLORE GITHUB REPO</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       EASTER EGG 1: SYSTEM ONLINE / PROTAGONIST MODE BANNER
+       ========================================================================== -->
+  <div class="system-online-overlay" id="system-online-overlay" role="dialog" aria-modal="true">
+    <div class="system-online-banner manga-panel">
+      <span class="corner-accent tl" aria-hidden="true"></span>
+      <span class="corner-accent tr" aria-hidden="true"></span>
+      <span class="corner-accent bl" aria-hidden="true"></span>
+      <span class="corner-accent br" aria-hidden="true"></span>
+
+      <div class="system-banner-kanji">「システム オンライン」</div>
+      <h3 class="system-banner-title">SYSTEM ONLINE</h3>
+      <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--orange-primary); margin-bottom: 12px;">
+        PROTAGONIST MODE ENGAGED // 100% OPERATIONAL
+      </div>
+      <p class="system-banner-sub">
+        "Code is more than syntax; it is how we construct systems that empower people and solve real-world friction."
+      </p>
+      <button type="button" class="btn-manga-primary" id="system-online-close">
+        RETURN TO PORTFOLIO
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       EASTER EGG 2: 100% SCROLL MANGA STAMP
+       ========================================================================== -->
+  <div class="scroll-stamp-toast" id="scroll-stamp-toast" role="status" aria-live="polite">
+    <div class="stamp-kanji">第1章 完</div>
+    <div class="stamp-content">
+      <span class="stamp-heading">CHAPTER 01 COMPLETE</span>
+      <span class="stamp-sub">TO BE CONTINUED // Let's connect and build!</span>
+    </div>
+  </div>
+
+  <!-- One Piece Anime Themed Cursor System -->
+  <div class="op-cursor-pointer" id="op-cursor-pointer" aria-hidden="true">
+    <svg class="op-cursor-strawhat" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Reticle pointer dot at apex -->
+      <circle cx="6" cy="4" r="2.2" fill="#ff6b00" stroke="#ffffff" stroke-width="0.8"/>
+      <circle cx="6" cy="4" r="0.8" fill="#ffffff"/>
+      <!-- Straw Hat Brim (Curved Golden Straw) -->
+      <ellipse cx="20" cy="24" rx="14" ry="4.5" fill="#f59e0b" stroke="#78350f" stroke-width="1.2"/>
+      <ellipse cx="20" cy="23.5" rx="12.5" ry="3.5" fill="#fbbf24"/>
+      <!-- Hat Crown / Dome -->
+      <path d="M11 23 C10.5 13, 29.5 13, 29 23 Z" fill="#fbbf24" stroke="#78350f" stroke-width="1.2"/>
+      <path d="M13 21 C12.5 14.5, 27.5 14.5, 27 21 Z" fill="#fde68a" opacity="0.6"/>
+      <!-- Iconic Red Ribbon Band -->
+      <path d="M10.8 19.5 C15.5 17.5, 24.5 17.5, 29.2 19.5 L29 23 C24.5 21, 15.5 21, 11 23 Z" fill="#ef4444" stroke="#991b1b" stroke-width="0.8"/>
+    </svg>
+  </div>
+  <div class="op-cursor-aura" id="op-cursor-aura" aria-hidden="true"></div>
+  <div class="op-trail-container" id="op-trail-container" aria-hidden="true"></div>
+
+  <!-- HUD Quick Controls Float (Bottom Right) -->
+  <div class="hud-quick-controls">
+    <button type="button" class="hud-ctrl-btn active" id="hud-ctrl-cursor" title="Toggle One Piece Straw Hat Cursor">
+      🏴‍☠️ OP CURSOR: ON
+    </button>
+    <button type="button" class="hud-ctrl-btn" id="hud-ctrl-sound" title="Toggle audio feedback">
+      🔇 SFX: OFF
+    </button>
+    <button type="button" class="hud-ctrl-btn active" id="hud-ctrl-particles" title="Toggle falling sakura flowers & particles">
+      🌸 FLOWERS: ON
+    </button>
+  </div>
+
+  <!-- Floating Toast Notification -->
+  <div class="hud-toast" id="hud-toast" role="status" aria-live="polite">
+    <span style="color: var(--orange-primary);">⚡</span>
+    <span id="toast-message">Notification</span>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
